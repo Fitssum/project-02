@@ -1,0 +1,16 @@
+<h2>Edit Station</h2>
+
+<%= form_for([@station]) do |f| %>
+
+  <%= f.label :station_name %>
+  <%= f.text_field :station_name %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+
+  <%= f.label :photo_url %>
+  <%= f.text_field :location %>
+
+  <%= f.submit %>
+
+<% end %>

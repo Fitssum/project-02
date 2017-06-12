@@ -4,8 +4,34 @@ class StationsController < ApplicationController
     @stations = Station.all
   end
 
+  def new
+   @station = Station.new
+ end
+
+  def create
+    @station = Station.find(params[:station_id])
+    @bike = @station.bikes.create(bike_params)
+    redirect_to new_station_bike_path(@station, @bike)
+  end
+
   def show
     @station = Station.find(params[:id])
   end
+
+  def edit
+    @station = Station.find(params[:id])
+  end
+
+  def update
+    @station = Station.find(params[:id])
+    @station.update(station_params)
+    redirect_to stations_path(@station)
+  end
+
+  def destroy
+   @station = Station.find(params[:id])
+   @station.destroy
+   redirect_to stations_path
+ end
 
 end

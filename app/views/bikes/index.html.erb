@@ -1,2 +1,7 @@
 <h1>Bikes</h1>
-<h1><%= @stationBikes.model %></h1>
+<ul>
+  <% @bikes.each do |i| %>
+    <li><%= i.bike_type %></li>
+        <%= i.model %>
+  <% end %>
+</ul>

@@ -2,5 +2,6 @@
   <h3> Address: <%= @station.location %></h3>
   <h3><img src="<%= @station.photo_url %>"></h3>
 
-
-  <h1><a href="/stations/<%= @station.id %>/bikes">See bikes</a></h1>
+  <h3><a href="/stations/<%= @station.id %>/bikes/<%= @bike_station %>">Find bikes in this station</a></h3>
+  <h3><a href="/stations/<%= @station.id %>/bikes/new">Create Bikes</a></h3>
+  <h3><a href="/stations/<%= @station.id %>/edit">Update Station</a></h3>

@@ -1,0 +1,16 @@
+<h2>Create new bike</h2>
+
+<%= form_for([@station, @bike]) do |f| %>
+
+  <%= f.label :serial_no %>
+  <%= f.text_field :serial_no %>
+
+  <%= f.label :bike_type %>
+  <%= f.text_field :bike_type %>
+
+  <%= f.label :model %>
+  <%= f.text_field :model %>
+
+  <%= f.submit %>
+
+<% end %>
