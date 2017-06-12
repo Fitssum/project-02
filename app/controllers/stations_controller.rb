@@ -24,7 +24,7 @@ class StationsController < ApplicationController
 
   def update
     @station = Station.find(params[:id])
-    @station.update(station_params)
+    @station.update(params[:station_id])
     redirect_to stations_path(@station)
   end
 
@@ -33,5 +33,16 @@ class StationsController < ApplicationController
    @station.destroy
    redirect_to stations_path
  end
+
+ def add_userbikes
+    @bike = bike.find(params[:id])
+    @bike.userbikes.create(user: current_user)
+    redirect_to :back
+  end
+
+ def remove_userbike
+    userbike.find_by(user: current_user, bike_id: params[:id]).destroy
+    redirect_to :back
+  end
 
 end

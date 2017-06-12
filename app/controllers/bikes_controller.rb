@@ -1,6 +1,5 @@
 class BikesController < ApplicationController
 
-
   def index
     @station = Station.find(params[:station_id])
     @bikes = @station.bikes
@@ -20,5 +19,22 @@ class BikesController < ApplicationController
   def show
     @bike = Bike.find(params[:id])
   end
+
+  def edit
+    @station = Station.find(params[:station_id])
+    @bike = Bike.find(params[:id])
+  end
+
+  def update
+    @bike = Bike.find(params[:id])
+    @bike.update(bike_params)
+    redirect_to edit_station_bike_path
+  end
+
+    def destroy
+      @bike = bike.find(params[:id])
+      @bike.destroy
+      redirect_to bikes_path
+    end
 
 end
