@@ -24,7 +24,7 @@ class StationsController < ApplicationController
 
   def update
     @station = Station.find(params[:id])
-    @station.update(params[:station_id])
+    @station.update(station_params)
     redirect_to stations_path(@station)
   end
 
@@ -43,6 +43,11 @@ class StationsController < ApplicationController
  def remove_userbike
     userbike.find_by(user: current_user, bike_id: params[:id]).destroy
     redirect_to :back
+  end
+
+  private
+  def station_params
+    params.require(:station).permit(:station_name, :location, :photo_url)
   end
 
 end

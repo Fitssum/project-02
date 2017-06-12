@@ -12,7 +12,7 @@ class BikesController < ApplicationController
 
   def create
     @station = Station.find(params[:station_id])
-    @bike = @station.bikes.create(params[:bike_id])
+    @bike = @station.bikes.create(bike_params)
     redirect_to station_bikes_path(@station, @bike)
   end
 
@@ -31,10 +31,15 @@ class BikesController < ApplicationController
     redirect_to edit_station_bike_path
   end
 
-    def destroy
-      @bike = bike.find(params[:id])
-      @bike.destroy
-      redirect_to bikes_path
-    end
+  def destroy
+    @bike = bike.find(params[:id])
+    @bike.destroy
+    redirect_to bikes_path
+  end
+
+    private
+  def bike_params
+    params.require(:bike).permit(:serial_no, :bike_type, :model)
+  end
 
 end
