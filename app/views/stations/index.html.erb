@@ -1,0 +1,11 @@
+<h1>Welcome to Affordable Bikeshares</h1>
+
+<ul>
+  <% @stations.each do |station| %>
+    <li>
+      <a href="/stations/<%= station.id %>">
+        <%= station.station_name %>
+      </a>
+    </li>
+  <% end %>
+</ul>
