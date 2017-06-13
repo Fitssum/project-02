@@ -7,8 +7,7 @@ Rails.application.routes.draw do
     resources :bikes
   end
 
-  resources :user_bikes do
+  resources :usersbikes do
     resources :users, :bikes
   end
-
 end

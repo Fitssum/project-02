@@ -1,2 +1,0 @@
-class UsersBikesController < ApplicationController
-end

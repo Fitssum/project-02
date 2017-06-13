@@ -20,11 +20,18 @@ class StationsController < ApplicationController
 
   def edit
     @station = Station.find(params[:id])
+    authorize! :update, @station
   end
 
   def update
     @station = Station.find(params[:id])
     @station.update(station_params)
+    authorize! :update, @station
+      if @station.update( station_params )
+        redirect_to @station
+      else
+        render :edit
+      end
     redirect_to stations_path(@station)
   end
 

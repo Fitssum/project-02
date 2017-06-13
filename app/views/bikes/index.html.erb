@@ -1,7 +1,9 @@
-<h1>Bikes</h1>
+<h1>Select one of the following bikes</h1>
 <ul>
   <% @bikes.each do |i| %>
-    <li><%= i.bike_type %></li>
+    <li><%= i.bike_type%></li>
         <%= i.model %>
+        <%= link_to 'Select this bike', usersbikes_path%>
+
   <% end %>
 </ul>
