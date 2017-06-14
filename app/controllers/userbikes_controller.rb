@@ -3,6 +3,10 @@ class UserbikesController < ApplicationController
     def index
       @userbike = Userbike.find(params[:userbike_id])
       @bikes = @userbike.bikes
+
+    end
+
+    def checkout
     end
 
     def new

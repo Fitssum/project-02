@@ -3,6 +3,6 @@
   <% @bikes.each do |i| %>
     <li><%= i.bike_type%></li>
         <%= i.model %>
-        <%= link_to 'Select this bike', new_userbike_path %>
+        <a href="/userbikes/<%= bikes.id %>/checkout">Select this bike</a>
   <% end %>
 </ul>
