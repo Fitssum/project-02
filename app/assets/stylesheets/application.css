@@ -13,7 +13,32 @@
  *= require_tree .
  *= require_self
  */
-
 body {
-  background-color: lightyellow;
+  text-align: center;
+}
+ul {
+  list-style: none;
+}
+#bike {
+  position: absolute;
+  zoom: 20%;
+  bottom: -5px;
+  animation: walk 10s linear infinite;
+}
+
+@keyframes walk {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 85%;
+    transform:rotateY(0deg);
+ }
+ 51% {
+   transform:rotateY(180deg);
+}
+ 100% {
+   left: 0;
+   transform:rotateY(180deg);
+ }
 }

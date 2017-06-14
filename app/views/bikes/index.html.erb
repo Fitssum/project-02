@@ -3,7 +3,6 @@
   <% @bikes.each do |i| %>
     <li><%= i.bike_type%></li>
         <%= i.model %>
-        <%= link_to 'Select this bike', userbikes_path %>
-        <%= link_to 'Delete!', station_bikes_path(@station, @bike), method: :delete, class: 'delete' %>
+        <%= link_to 'Select this bike', new_userbike_path %>
   <% end %>
 </ul>

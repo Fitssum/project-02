@@ -1,17 +1,46 @@
-class UserBikesController < ApplicationController
+class UserbikesController < ApplicationController
 
-  def index
-    @usersbikes = UserBike.all
-  end
+    def index
+      @userbike = Userbike.find(params[:userbike_id])
+      @bikes = @userbike.bikes
+    end
 
-  def create
-    @bike = Bike.find(params[:bike_id])
-    @bike = User.find(params[:user_id])
-    @userbike = @bike.userbikes.create(userbike_params)
-  end
+    def new
+     @userbike = Userbike.find(params[:userbike_id])
+     @bike = @userbike.bikes.new
+    end
 
-  private
-  def userbike_params
-    params.require(:userbike).permit(:date_rented, :dt_returned, :user_id, :bike_id)
+    def create
+      @userbike = Userbike.find(params[:userbike_id])
+      @bike = @userbike.bikes.create(bike_params)
+      redirect_to userbike_bikes_path(@userbike, @bike)
+    end
+
+    def show
+      @bike = Userbike.find(params[:id])
+      @bike = Bike.find(params[:id])
+    end
+
+    def edit
+      @userbike = Userbike.find(params[:userbike_id])
+      @bike = Bike.find(params[:id])
+    end
+
+    def update
+      @bike = Bike.find(params[:id])
+      @bike.update(bike_params)
+      redirect_to edit_userbike_bike_path
+    end
+
+    def destroy
+      @bike = bike.find(params[:id])
+      @bike.destroy
+      redirect_to bikes_path
+    end
+
+      private
+    def bike_params
+      params.require(:bike).permit(:serial_no, :bike_type, :model)
+    end
+
   end
-end
