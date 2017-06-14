@@ -20,7 +20,10 @@ class StationsController < ApplicationController
 
   def edit
     @station = Station.find(params[:id])
-    authorize! :update, @station
+    if @user.admin
+      authorize! :update, @station
+      can :manage, Station
+    end
   end
 
   def update
