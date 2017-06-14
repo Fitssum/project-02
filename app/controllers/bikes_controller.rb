@@ -1,5 +1,5 @@
 class BikesController < ApplicationController
-  # load_and_authorize_resource
+  before_action :authenticate_user!, only: [:create, :update, :edit, :destroy, :new]
 
   def index
     @station = Station.find(params[:station_id])

@@ -4,6 +4,6 @@
     <li><%= i.bike_type%></li>
         <%= i.model %>
         <%= link_to 'Select this bike', userbikes_path %>
-
+        <%= link_to 'Delete!', station_bikes_path(@station, @bike), method: :delete, class: 'delete' %>
   <% end %>
 </ul>

@@ -1,4 +1,5 @@
 class StationsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :update, :edit, :destroy, :new]
 
   def index
     @stations = Station.all
@@ -19,11 +20,7 @@ class StationsController < ApplicationController
   end
 
   def edit
-    @station = Station.find(params[:id])
-    if @user.admin
-      authorize! :update, @station
-      can :manage, Station
-    end
+    @station = Station.find(params[:id])    
   end
 
   def update
