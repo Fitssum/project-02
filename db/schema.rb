@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20170613181725) do
   end
 
   create_table "user_bikes", force: :cascade do |t|
+    t.datetime "dt_rented"
+    t.datetime "dt_returned"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
@@ -43,7 +45,6 @@ ActiveRecord::Schema.define(version: 20170613181725) do
     t.string "name"
     t.string "membership"
     t.string "address"
-    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false

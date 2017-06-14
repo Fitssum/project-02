@@ -1,4 +1,5 @@
 class BikesController < ApplicationController
+  # load_and_authorize_resource
 
   def index
     @station = Station.find(params[:station_id])
@@ -41,5 +42,9 @@ class BikesController < ApplicationController
   def bike_params
     params.require(:bike).permit(:serial_no, :bike_type, :model)
   end
+
+  # if user.admin
+  #   can :manage, Bike
+  # end
 
 end

@@ -1,9 +1,7 @@
 class UserBikesController < ApplicationController
 
   def index
-    @users = User.all
-    @bikes = Bike.all
-    @userbikes = Userbike.all
+    @usersbikes = UserBike.all
   end
 
   def create

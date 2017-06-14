@@ -4,7 +4,6 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :membership
       t.string :address
-      t.string "status"
 
       t.timestamps
     end

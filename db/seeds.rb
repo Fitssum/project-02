@@ -49,8 +49,8 @@ zbc = Bike.create(serial_no:"654-15-3183", bike_type:"CRUISER", model:"Titus mod
 zcd = Bike.create(serial_no:"435-79-3491", bike_type:"CRUISER", model:"Titus model", station:cambridge)
 zde = Bike.create(serial_no:"262-25-2649", bike_type:"CRUISER", model:"Titus model", station:cambridge)
 
-fitssum = User.create!(name:"Fitssum Haile", membership:"annual", address:"2904 Fairland rd.", email:"fitsum.wolde@gmail.com", status:"admin", password:"123456")
-mcGilvary = User.create(name:"Blondell McGilvary", membership:"annual", address:"9394 Calypso Center", email:"bondell@yahoo.com", status:"user", password:"123456")
+fitssum = User.create!(name:"Fitssum Haile", membership:"annual", address:"2904 Fairland rd.", email:"fitsum.wolde@gmail.com", password:"123456")
+mcGilvary = User.create!(name:"Blondell McGilvary", membership:"annual", address:"9394 Calypso Center", email:"bondell@yahoo.com", password:"123456")
 # croney = User.create(name:"Giraud Croney", membership:"annual", address:"61658 Clarendon Park", password:"123456")
 # barhims = User.create(name:"Davida Barhims", membership:"annual", address:"5263 Morrow Drive", password:"123456")
 # goulborn = User.create(name:"Ardyth Goulborn", membership:"annual", address:"83616 Pearson Terrace", password:"123456")
@@ -100,3 +100,5 @@ mcGilvary = User.create(name:"Blondell McGilvary", membership:"annual", address:
 # elward = User.create(name:"Leighton Elward", membership:"daily", address:"5 Eliot Parkway", password:"123456")
 # bouchier = User.create(name:"Alexander Bouchier", membership:"daily", address:"7 Nelson Alley", password:"123456")
 # koschek = User.create(name:"Margaretha Koschek", membership:"daily", address:"214 Old Shore Street", password:"123456")
+
+mcGilvary_abc = UserBike.create(user:mcGilvary, bike:abc, dt_rented: "2017-06-11 12:37:00.757182-04", dt_returned: false)
