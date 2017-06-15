@@ -30,14 +30,10 @@ class StationsController < ApplicationController
   end
 
   def destroy
-  @station = Station.find(params[:id])
-    if @station.user == current_user
-      @station.destroy
-    else
-      flash[:alert] = "Only the author of the bike can delete"
-    end
-  redirect_to bikes_path
-end
+    @station = Station.find(params[:id])
+    @station.destroy(station_params)
+    redirect_to root_path(@station)
+  end
 
  def add_userbikes
     @bike = bike.find(params[:id])
