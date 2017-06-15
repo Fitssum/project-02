@@ -29,8 +29,4 @@ class UsersController < ApplicationController
     redirect_to root_path(@user)
   end
 
-private
-  if User.current_user.admin
-    can :manage, Bike, User.current_user
-  end
 end
