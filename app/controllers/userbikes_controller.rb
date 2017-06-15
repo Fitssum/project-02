@@ -20,9 +20,9 @@ class UserbikesController < ApplicationController
     end
 
     def create
-      @userbike = Userbike.find(params[:userbike_id])
-      @bike = @userbike.bikes.create(bike_params)
-      redirect_to userbike_bikes_path(@userbike, @bike)
+      @user = User.find_by(name: 'Fitssum Haile')
+      @bike = Bike.find(params[bike_params])
+      @userbike = Userbike.create(user:@user, bike:@bike)
     end
 
     def show
@@ -49,7 +49,7 @@ class UserbikesController < ApplicationController
 
       private
     def bike_params
-      params.require(:bike).permit(:serial_no, :bike_type, :model)
+      params.require(:bike).permit(:bike, :serial_no, :bike_type, :model)
     end
 
   end

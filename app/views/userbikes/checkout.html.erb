@@ -1,13 +1,27 @@
-<h2>Please include the following details</h2>
+<h2>Please include the following details  </h2>
+  <div id="rentCalculator">
+    <%= form_for([@userbike]) do |f| %>
 
-<%= form_for([@userbike]) do |f| %>
+      <%= f.label :dt_rented %>
+      <%= f.text_field :dt_rented %>
 
-  <%= f.label :dt_rented %>
-  <%= f.text_field :dt_rented %>
+      <%= f.label :dt_returned %>
+      <%= f.text_field :dt_returned %>
+      <%= f.submit %>
 
-  <%= f.label :dt_returned %>
-  <%= f.text_field :dt_returned %>
+    <% end %>
+  </div>
 
-  <%= f.submit %>
 
-<% end %>
+<script type="text/javascript">
+  $(document).ready(function(){
+  $("#rentCalculator").on("click", function(){
+    var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+    var dt_rented = new Date(2017,05,06);
+    var dt_returned = new Date(2017,06,07);
+    var numDays = Math.round(Math.abs((dt_rented.getTime() - dt_returned.getTime())/(oneDay)));
+    var rent = "$" + (numDays* 10);
+    $("#payment").text(rent)
+  })
+});
+</script>
