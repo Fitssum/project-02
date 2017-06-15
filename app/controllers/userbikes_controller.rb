@@ -49,7 +49,7 @@ class UserbikesController < ApplicationController
 
       private
     def bike_params
-      params.require(:bike).permit(:serial_no, :bike_type, :model)
+      params.require(@bike).permit(:serial_no, :bike_type, :model)
     end
 
   end
