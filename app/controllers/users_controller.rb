@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = Users.all
+    @users = User.all
     redirect_to new_user_session_path
   end
 
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   end
 
 private
-  if user.admin
-    can :manage, Bike, user
+  if current_user.admin
+    can :manage, Bike, current_user
   end
 end

@@ -27,7 +27,7 @@ class UserbikesController < ApplicationController
 
     def show
       @bike = Userbike.find(params[:id])
-      @bike = Bike.find(params[:id])
+      # @bike = Bike.find(params[:id])
     end
 
     def edit
