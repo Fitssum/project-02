@@ -1,12 +1,17 @@
 class UserbikesController < ApplicationController
 
     def index
+      @userbikes = Userbikes.all
       @userbike = Userbike.find(params[:userbike_id])
       @bikes = @userbike.bikes
 
     end
 
     def checkout
+      @user = User.find_by(name: 'Fitssum Haile')
+      @bike = Bike.find(params[:bike_id])
+      @userbike = Userbike.new(user:@user, bike:@bike)
+
     end
 
     def new

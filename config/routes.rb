@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resources :users, :bikes
   end
 
-  get '/userbikes/:id/checkout' => 'userbikes#checkout'
+  get '/userbikes/:bike_id/checkout' => 'userbikes#checkout'
+
 end

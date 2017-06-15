@@ -20,26 +20,24 @@ class StationsController < ApplicationController
   end
 
   def edit
-    @station = Station.find(params[:id])    
+    @station = Station.find(params[:id])
   end
 
   def update
     @station = Station.find(params[:id])
     @station.update(station_params)
-    authorize! :update, @station
-      if @station.update( station_params )
-        redirect_to @station
-      else
-        render :edit
-      end
-    redirect_to stations_path(@station)
+    redirect_to root_path(@station)
   end
 
   def destroy
-   @station = Station.find(params[:id])
-   @station.destroy
-   redirect_to stations_path
- end
+  @station = Station.find(params[:id])
+    if @station.user == current_user
+      @station.destroy
+    else
+      flash[:alert] = "Only the author of the bike can delete"
+    end
+  redirect_to bikes_path
+end
 
  def add_userbikes
     @bike = bike.find(params[:id])

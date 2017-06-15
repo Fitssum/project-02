@@ -1,4 +1,4 @@
-class UserBike < ApplicationRecord
+class Userbike < ApplicationRecord
   belongs_to :user
   belongs_to :bike
 end

@@ -1,1 +1,13 @@
-<h2>Hello bossman!</h2>
+<h2>Please include the following details</h2>
+
+<%= form_for([@userbike]) do |f| %>
+
+  <%= f.label :dt_rented %>
+  <%= f.text_field :dt_rented %>
+
+  <%= f.label :dt_returned %>
+  <%= f.text_field :dt_returned %>
+
+  <%= f.submit %>
+
+<% end %>
