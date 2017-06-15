@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   end
 
 private
-  if current_user.admin
-    can :manage, Bike, current_user
+  if User.current_user.admin
+    can :manage, Bike, User.current_user
   end
 end
