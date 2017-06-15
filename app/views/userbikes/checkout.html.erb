@@ -1,5 +1,5 @@
 <h2>Please include the following details  </h2>
-  <div id="rentCalculator">
+  <div id="rentCalculator ">
     <%= form_for([@userbike]) do |f| %>
 
       <%= f.label :dt_rented %>
@@ -12,16 +12,14 @@
     <% end %>
   </div>
 
-
 <script type="text/javascript">
   $(document).ready(function(){
-  $("#rentCalculator").on("click", function(){
+  $("#rentCalculator input[type="submit"]").on("click", function(){
     var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
     var dt_rented = new Date(2017,05,06);
     var dt_returned = new Date(2017,06,07);
     var numDays = Math.round(Math.abs((dt_rented.getTime() - dt_returned.getTime())/(oneDay)));
-    var rent = "$" + (numDays* 10);
-    $("#payment").text(rent)
+    var rent = "$" + (numDays * 10);
+    $("#payment").text(rent);
   })
 });
-</script>
