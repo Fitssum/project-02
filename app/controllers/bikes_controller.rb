@@ -1,10 +1,12 @@
 class BikesController < ApplicationController
   before_action :authenticate_user!, only: [:create, :update, :edit, :destroy, :new]
 
+  # create update and delete should have conditional error handling for failure
+
   def index
     @station = Station.find(params[:station_id])
     @bikes = @station.bikes
-    @bike = Bike.all    
+    @bike = Bike.all
   end
 
   def new

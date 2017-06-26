@@ -1,6 +1,9 @@
 class StationsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :update, :edit, :destroy, :new]
 
+  # create update and delete should have conditional error handling for failure
+
+
   def index
     @stations = Station.all
   end
