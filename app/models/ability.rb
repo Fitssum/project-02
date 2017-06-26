@@ -10,3 +10,4 @@ class Ability
 
   end
 end
+# CanCanCan might be overkill
