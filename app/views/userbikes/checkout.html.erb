@@ -18,6 +18,8 @@
     var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
     var dt_rented = new Date(2017,05,06);
     var dt_returned = new Date(2017,06,07);
+    // this won't connect by itself to the form but you could use jQuery to select the form fields
+    // and add the values with javascript by using .text like you did below on line 25
     var numDays = Math.round(Math.abs((dt_rented.getTime() - dt_returned.getTime())/(oneDay)));
     var rent = "$" + (numDays * 10);
     $("#payment").text(rent);
