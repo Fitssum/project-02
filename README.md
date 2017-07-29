@@ -16,6 +16,4 @@ Technologies used
 - rails ERD gemfile is included to generate ERD from the command line (please see erd.pdf file)
 
 Unsolved problems
-- All the RESTful routes are functional except delete.
 - Creating, updating or deleting requires users' login which is currently functional. However, the application specifically does not provide exclusive admin privileges.
-- Unsolved problem in posting calculated rent.
