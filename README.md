@@ -14,6 +14,3 @@ Technologies used
 - Bootstrap CDN link is included in the layout application which initiates some text formatting for all pages of the application. The difference can be noticeable when online and offline.
 - jquery is included to calculate the amount of rent that users will pay.
 - rails ERD gemfile is included to generate ERD from the command line (please see erd.pdf file)
-
-Unsolved problems
-- Creating, updating or deleting requires users' login which is currently functional. However, the application specifically does not provide exclusive admin privileges.
