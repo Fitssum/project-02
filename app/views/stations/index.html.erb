@@ -1,7 +1,9 @@
+
 <h1>Welcome to Affordable Bikeshares</h1>
 <h3>Please choose a station to see the availability of bikes.</h3>
 
-
+<div class="box">
+  <h2>List of Stations</h2>
 <ul>
   <% @stations.each do |station| %>
     <li>
@@ -11,6 +13,8 @@
     </li>
   <% end %>
 </ul>
+</div>
+
 
 <div id='bike'>
   <img src="http://i.imgur.com/h0J8x34.png" alt="cat">
