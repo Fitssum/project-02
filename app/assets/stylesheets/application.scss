@@ -17,6 +17,7 @@
  body {
    font-family: monospace;
    background-color: #3498db;
+   text-align: center;
  }
  ul {
   list-style: none;
@@ -26,7 +27,7 @@
 h1 {
   text-align: center;
 }
-h3 {
+h3, h2 {
   text-align: center;
 }
 .field {
@@ -55,16 +56,9 @@ a {
 .actions, .fields {
   text-align: center;
 }
-// .actions {
-//     background-color: white;
-//     color: black;
-//     border: 2px solid #008CBA;
-// }
-//
-// .actions:hover {
-//     background-color: #008CBA;
-//     color: white;
-// }
+.registration1, .registration2{
+  text-align: center;
+}
 
 #bike {
   position: absolute;
